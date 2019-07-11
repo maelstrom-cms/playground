@@ -31,6 +31,13 @@ class CategoryController extends Controller
     {
         $this->panel->setTableHeadings([
             [
+                'label' => 'Colour',
+                'dataIndex' => 'colour',
+                'align' => 'center',
+                'type' => 'ColourColumn',
+                'width' => '150px',
+            ],
+            [
                 'label' => 'Name',
                 'dataIndex' => 'name',
                 'type' => 'EditLinkColumn',

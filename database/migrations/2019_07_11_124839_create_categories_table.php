@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('post_category', function (Blueprint $table) {
+        Schema::create('category_post', function (Blueprint $table) {
             $table->bigInteger('category_id');
             $table->bigInteger('post_id');
         });
@@ -34,6 +34,6 @@ class CreateCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('categories');
-        Schema::dropIfExists('post_category');
+        Schema::dropIfExists('category_post');
     }
 }

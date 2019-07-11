@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
                 'id' => 'Dashboard',
                 'url' => '/admin',
                 'label' => 'Dashboard',
-                'icon' => 'head-map',
+                'icon' => 'radar-chart',
             ],
             [
                 'id' => 'Posts',
