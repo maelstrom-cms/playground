@@ -23,4 +23,7 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
     Route::view('/', 'admin.dashboard');
     Route::get('/edit-account', '\Maelstrom\Http\Controllers\EditAccountController')->name('maelstrom.edit-account');
     Route::put('/edit-account', '\Maelstrom\Http\Controllers\EditAccountController@update');
+
+    Route::resource('/tags', 'Admin\TagController');
+    Route::resource('/categories', 'Admin\CategoryController');
 });

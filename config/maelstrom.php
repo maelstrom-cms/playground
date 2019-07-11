@@ -135,7 +135,13 @@ return [
          * ],
          *
          */
-        'models' => [],
+        'models' => [
+            'posts' => [
+                'model' => App\Post::class,
+                'value' => 'id',
+                'label' => 'id',
+            ],
+        ],
     ],
 
     /*
