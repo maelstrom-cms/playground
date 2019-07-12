@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->longText('body');
             $table->bigInteger('gallery_id')->nullable();
+            $table->bigInteger('category_id');
             $table->unsignedInteger('rating')->default(0);
             $table->boolean('is_featured')->default(0);
             $table->string('featured_headline')->nullable();

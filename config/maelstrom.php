@@ -139,7 +139,17 @@ return [
             'posts' => [
                 'model' => App\Post::class,
                 'value' => 'id',
-                'label' => 'id',
+                'label' => 'name',
+            ],
+            'tags' => [
+                'model' => App\Tag::class,
+                'value' => 'id',
+                'label' => 'name',
+            ],
+            'categories' => [
+                'model' => App\Category::class,
+                'value' => 'id',
+                'label' => 'name',
             ],
         ],
     ],

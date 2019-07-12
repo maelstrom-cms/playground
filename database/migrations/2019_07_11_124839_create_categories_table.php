@@ -19,11 +19,6 @@ class CreateCategoriesTable extends Migration
             $table->string('colour');
             $table->timestamps();
         });
-
-        Schema::create('category_post', function (Blueprint $table) {
-            $table->bigInteger('category_id');
-            $table->bigInteger('post_id');
-        });
     }
 
     /**
@@ -34,6 +29,5 @@ class CreateCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('categories');
-        Schema::dropIfExists('category_post');
     }
 }

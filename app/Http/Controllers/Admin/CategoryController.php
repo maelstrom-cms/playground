@@ -33,8 +33,8 @@ class CategoryController extends Controller
             [
                 'label' => 'Colour',
                 'dataIndex' => 'colour',
-                'align' => 'center',
                 'type' => 'ColourColumn',
+                'align' => 'center',
                 'width' => '150px',
             ],
             [

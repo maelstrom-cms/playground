@@ -8,6 +8,17 @@ class Tag extends Model
 {
     protected $fillable = ['name'];
 
+    public static function createIfNeeded($tag_id)
+    {
+        if (static::where('id', $tag_id)->count()) {
+            return $tag_id;
+        }
+
+        $tag = static::create(['name' => $tag_id]);
+
+        return $tag->getKey();
+    }
+
     public function posts()
     {
         return $this->belongsToMany(Post::class);

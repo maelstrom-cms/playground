@@ -26,6 +26,7 @@ Route::prefix('/admin')->namespace('Admin')->middleware('auth')->group(function 
 
     Route::resource('/tags', 'TagController');
     Route::resource('/categories', 'CategoryController');
+    Route::resource('/posts', 'PostController');
 
     Route::post('/bulk-actions/tags', 'BulkActionsController')->name('tags.bulk');
     Route::post('/bulk-actions/categories', 'BulkActionsController')->name('categories.bulk');
