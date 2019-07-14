@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Author;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\CategoryRequest as Request;
+use App\Http\Requests\Admin\AuthorRequest as Request;
 
-class CategoryController extends Controller
+class AuthorController extends Controller
 {
     /**
      * @var \Maelstrom\Panel
@@ -16,10 +16,13 @@ class CategoryController extends Controller
 
     public function __construct()
     {
-        $this->panel = maelstrom(Category::class)
+        $this->panel = maelstrom(Author::class)
             ->setEagerLoad(['posts'])
             ->setRelationships(['posts' => 'posts'])
-            ->setWithAttributes(['post_count']);
+            ->setWithAttributes(['post_count', 'avatar_url'])
+            ->setUploadables([
+                'avatar' => ['disk' => 'avatars'],
+            ]);
     }
 
     /**
@@ -31,9 +34,9 @@ class CategoryController extends Controller
     {
         $this->panel->setTableHeadings([
             [
-                'label' => 'Colour',
-                'dataIndex' => 'colour',
-                'type' => 'ColourColumn',
+                'label' => 'Avatar',
+                'dataIndex' => 'avatar_url',
+                'type' => 'ImageColumn',
                 'align' => 'center',
                 'width' => '150px',
             ],
@@ -51,7 +54,7 @@ class CategoryController extends Controller
             ],
         ]);
 
-        return $this->panel->index('admin.category-index');
+        return $this->panel->index('admin.author-index');
     }
 
     /**
@@ -61,7 +64,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return $this->panel->create('admin.category-form');
+        return $this->panel->create('admin.author-form');
     }
 
     /**
@@ -73,7 +76,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->panel->store('Category created.');
+        $this->panel->store('Author created.');
 
         return $this->panel->redirect('edit');
     }
@@ -81,12 +84,12 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Category $category
+     * @param Author $author
      * @return Response
      */
-    public function show(Category $category)
+    public function show(Author $author)
     {
-        $this->panel->setEntry($category);
+        $this->panel->setEntry($author);
 
         return $this->panel->redirect('edit');
     }
@@ -94,29 +97,29 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Category $category
+     * @param Author $author
      * @return Response
      */
-    public function edit(Category $category)
+    public function edit(Author $author)
     {
-        $this->panel->setEntry($category);
+        $this->panel->setEntry($author);
 
-        return $this->panel->edit('admin.category-form');
+        return $this->panel->edit('admin.author-form');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Category $category
+     * @param Author $author
      * @return Response
      * @throws \ReflectionException
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Author $author)
     {
-        $this->panel->setEntry($category);
+        $this->panel->setEntry($author);
 
-        $this->panel->update('Category updated.');
+        $this->panel->update('Author updated.');
 
         return $this->panel->redirect('edit');
     }
@@ -124,15 +127,15 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Category $category
+     * @param Author $author
      * @return Response
      * @throws \Exception
      */
-    public function destroy(Category $category)
+    public function destroy(Author $author)
     {
-        $this->panel->setEntry($category);
+        $this->panel->setEntry($author);
 
-        $this->panel->destroy('Category deleted.');
+        $this->panel->destroy('Author deleted.');
 
         return $this->panel->redirect('index');
     }

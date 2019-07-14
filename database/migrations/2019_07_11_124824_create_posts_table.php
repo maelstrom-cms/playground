@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->longText('body');
+            $table->bigInteger('author_id');
             $table->bigInteger('gallery_id')->nullable();
             $table->bigInteger('category_id');
             $table->unsignedInteger('rating')->default(0);

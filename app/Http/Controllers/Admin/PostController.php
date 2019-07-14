@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Post;
 use App\Tag;
-use Illuminate\Http\Request;
+use App\Post;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\PostRequest as Request;
 
 class PostController extends Controller
 {

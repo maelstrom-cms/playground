@@ -27,8 +27,10 @@ Route::prefix('/admin')->namespace('Admin')->middleware('auth')->group(function 
     Route::resource('/tags', 'TagController');
     Route::resource('/categories', 'CategoryController');
     Route::resource('/posts', 'PostController');
+    Route::resource('/authors', 'AuthorController');
 
     Route::post('/bulk-actions/tags', 'BulkActionsController')->name('tags.bulk');
     Route::post('/bulk-actions/categories', 'BulkActionsController')->name('categories.bulk');
     Route::post('/bulk-actions/posts', 'BulkActionsController')->name('posts.bulk');
+    Route::post('/bulk-actions/authors', 'BulkActionsController')->name('authors.bulk');
 });

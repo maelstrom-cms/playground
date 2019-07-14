@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Tag;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\TagRequest as Request;
 
 class TagController extends Controller
 {

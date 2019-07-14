@@ -151,6 +151,11 @@ return [
                 'value' => 'id',
                 'label' => 'name',
             ],
+            'authors' => [
+                'model' => App\Author::class,
+                'value' => 'id',
+                'label' => 'name',
+            ],
         ],
     ],
 

@@ -15,6 +15,7 @@ class Post extends Model
         'body',
         'gallery_id',
         'category_id',
+        'author_id',
         'rating',
         'is_featured',
         'featured_headline',
