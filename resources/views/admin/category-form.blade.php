@@ -7,6 +7,7 @@
         'action' => $action,
         'method' => $method,
     ])
+
             <div class="w-1/2">
             @include('maelstrom::inputs.text', [
                 'name' => 'name',

@@ -20,7 +20,7 @@ class PostController extends Controller
         $this->panel = maelstrom(Post::class)
             ->setEagerLoad(['category', 'tags'])
             ->setRelationships(['tag_ids' => 'tags'])
-            ->setWithAttributes(['tag_names']);
+            ->setWithAttributes(['tag_names', 'category.admin_url']);
     }
 
     /**
@@ -52,7 +52,10 @@ class PostController extends Controller
             ],
             [
                 'label' => 'Category',
-                'dataIndex' => 'category.name',
+                'type' => 'TextLinkColumn',
+                'labelIndex' => 'category.name',
+                'dataIndex' => 'category.admin_url',
+                'newTab' => true,
             ],
             [
                 'label' => 'Tags',
