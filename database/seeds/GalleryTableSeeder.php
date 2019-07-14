@@ -1,5 +1,6 @@
 <?php
 
+use Maelstrom\Models\Media;
 use Illuminate\Database\Seeder;
 
 class GalleryTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class GalleryTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Media::class, 20)->create();
     }
 }

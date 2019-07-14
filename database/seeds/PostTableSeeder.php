@@ -15,11 +15,11 @@ class PostTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         factory(Post::class, 20)->create()->each(function (Post $post) use ($faker) {
-            $numberOfTags = $faker->numberBetween(0, 5);
+            $numberOfTags = $faker->numberBetween(0, 3);
             $tags = [1, 2, 3, 4, 5, 6, 7, 8, 9];
             shuffle($tags);
 
-            $post->tags()->sync(array_slice($tags, $numberOfTags));
+            $post->tags()->sync(array_slice($tags, 0, $numberOfTags));
         });
     }
 }
