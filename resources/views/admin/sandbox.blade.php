@@ -27,6 +27,7 @@
                         '_component' => 'colour',
                         'name' => 'Colour',
                         'default' => '#f44336',
+                        'type' => 'Sketch',
                     ],
                     [
                         '_component' => 'date',
