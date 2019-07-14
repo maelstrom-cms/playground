@@ -2,10 +2,10 @@
 
 cd /home/forge/demo.maelstrom-cms.com
 
-git reset --hard;
-git clean -df;
+git reset --hard
+git clean -df
 
-git pull origin master
+git pull
 
 composer install -n
 
