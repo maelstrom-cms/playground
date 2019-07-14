@@ -32,6 +32,11 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
+    }
+
     public function getTagIdsAttribute()
     {
         return $this->tags->pluck('id');

@@ -82,6 +82,12 @@
             ])
 
             @include('maelstrom::inputs.select', [
+                'name' => 'gallery_id',
+                'label' => 'Attach Gallery',
+                'remote_uri' => route('maelstrom.form-options', 'galleries'),
+            ])
+
+            @include('maelstrom::inputs.select', [
                 'name' => 'author_id',
                 'label' => 'Author',
                 'required' => true,

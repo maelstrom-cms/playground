@@ -156,6 +156,11 @@ return [
                 'value' => 'id',
                 'label' => 'name',
             ],
+            'galleries' => [
+                'model' => App\Gallery::class,
+                'value' => 'id',
+                'label' => 'name',
+            ],
         ],
     ],
 

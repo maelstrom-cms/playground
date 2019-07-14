@@ -19,7 +19,7 @@ class GalleryController extends Controller
         $this->panel = maelstrom(Gallery::class)
             ->setEagerLoad(['posts'])
             ->setRelationships(['posts' => 'posts'])
-            ->setWithAttributes(['post_count']);
+            ->setWithAttributes(['post_count', 'image_count']);
     }
 
     /**
@@ -36,6 +36,11 @@ class GalleryController extends Controller
                 'type' => 'EditLinkColumn',
                 'searchable' => true,
                 'sortable' => true,
+            ],
+            [
+                'label' => 'Images',
+                'dataIndex' => 'image_count',
+                'align' => 'center',
             ],
             [
                 'label' => 'Post count',

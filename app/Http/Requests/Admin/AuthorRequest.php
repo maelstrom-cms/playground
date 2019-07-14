@@ -25,7 +25,7 @@ class AuthorRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'avatar' => 'nullable|file',
+            'avatar' => 'nullable',
             'website' => 'nullable|url',
         ];
     }

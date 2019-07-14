@@ -21,14 +21,15 @@ Route::redirect('/', '/admin')->name('home');
 
 Route::prefix('/admin')->namespace('Admin')->middleware('auth')->group(function () {
     Route::view('/', 'admin.dashboard');
+    Route::view('/sandbox', 'admin.sandbox');
     Route::get('/edit-account', '\Maelstrom\Http\Controllers\EditAccountController')->name('maelstrom.edit-account');
     Route::put('/edit-account', '\Maelstrom\Http\Controllers\EditAccountController@update');
 
     Route::resource('/tags', 'TagController');
-//    Route::resource('/categories', 'CategoryController');
-//    Route::resource('/posts', 'PostController');
-//    Route::resource('/authors', 'AuthorController');
-//    Route::resource('/galleries', 'GalleryController');
+    Route::resource('/categories', 'CategoryController');
+    Route::resource('/posts', 'PostController');
+    Route::resource('/authors', 'AuthorController');
+    Route::resource('/galleries', 'GalleryController');
 
     Route::post('/bulk-actions/tags', 'BulkActionsController')->name('tags.bulk');
     Route::post('/bulk-actions/categories', 'BulkActionsController')->name('categories.bulk');

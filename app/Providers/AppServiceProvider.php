@@ -30,43 +30,41 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('maelstrom_sidebar', [
             [
-                'id' => 'Dashboard',
                 'url' => '/admin',
                 'label' => 'Dashboard',
                 'icon' => 'radar-chart',
             ],
             [
-                'id' => 'Posts',
+                'url' => '/admin/sandbox',
+                'label' => 'Sandbox',
+                'icon' => 'experiment',
+            ],
+            [
                 'url' => '/admin/posts',
                 'label' => 'Posts',
                 'icon' => 'read',
             ],
             [
-                'id' => 'galleries',
                 'url' => '/admin/galleries',
                 'label' => 'Galleries',
                 'icon' => 'appstore',
             ],
             [
-                'id' => 'Authors',
                 'url' => '/admin/authors',
                 'label' => 'Authors',
                 'icon' => 'usergroup-add',
             ],
             [
-                'id' => 'settings',
                 'type' => 'SubMenu',
                 'label' => 'Settings',
                 'icon' => 'setting',
                 'children' => [
                     [
-                        'id' => 'Tags',
                         'url' => '/admin/tags',
                         'label' => 'Tags',
                         'icon' => 'tag',
                     ],
                     [
-                        'id' => 'Categories',
                         'url' => '/admin/categories',
                         'label' => 'Categories',
                         'icon' => 'appstore',

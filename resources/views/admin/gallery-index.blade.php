@@ -2,7 +2,7 @@
 
 @section('buttons')
     @include('maelstrom::buttons.button', [
-        'url' => route('tags.create'),
+        'url' => route('galleries.create'),
         'label' => 'Create Gallery'
     ])
 @endsection
