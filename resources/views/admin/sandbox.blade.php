@@ -26,7 +26,7 @@
                     [
                         '_component' => 'colour',
                         'name' => 'Colour',
-                        'default' => '#e25141',
+                        'default' => '#f44336',
                     ],
                     [
                         '_component' => 'date',
