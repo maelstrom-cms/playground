@@ -9,7 +9,7 @@ git pull
 
 composer install -n
 
-npm ci
+npm install
 npm run production
 
 php artisan cache:clear
