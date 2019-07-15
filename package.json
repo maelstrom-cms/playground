@@ -23,6 +23,6 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "@maelstrom-cms/toolkit": "^1.0.9"
+        "@maelstrom-cms/toolkit": "^1.0"
     }
 }
