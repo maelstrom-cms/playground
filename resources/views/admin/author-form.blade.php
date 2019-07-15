@@ -8,31 +8,28 @@
         'method' => $method,
     ])
 
-        <div class="w-1/2">
-            @include('maelstrom::inputs.text', [
-                'name' => 'name',
-                'label' => 'Name',
-                'required' => true,
-            ])
+        @include('maelstrom::inputs.text', [
+            'name' => 'name',
+            'label' => 'Name',
+            'required' => true,
+        ])
 
-            @include('maelstrom::inputs.image', [
-                'name' => 'avatar',
-                'label' => 'Avatar',
-                'thumbnail' => 'avatar_url',
-            ])
+        @include('maelstrom::inputs.image', [
+            'name' => 'avatar',
+            'label' => 'Avatar',
+            'thumbnail' => 'avatar_url',
+        ])
 
-            @include('maelstrom::inputs.text', [
-                'name' => 'website',
-                'label' => 'Personal website',
-                'html_type' => 'url'
-            ])
+        @include('maelstrom::inputs.text', [
+            'name' => 'website',
+            'label' => 'Personal website',
+            'html_type' => 'url'
+        ])
 
-            @include('maelstrom::inputs.markdown', [
-                'name' => 'biography',
-                'label' => 'Biography',
-            ])
-
-        </div>
+        @include('maelstrom::inputs.markdown', [
+            'name' => 'biography',
+            'label' => 'Biography',
+        ])
 
         @include('maelstrom::inputs.transfer', [
             'label' => 'Linked posts',

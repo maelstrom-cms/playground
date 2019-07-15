@@ -13,7 +13,8 @@ $factory->define(Post::class, function (Faker $faker) {
             return sprintf('<p>%s</p>', $line);
         }, $faker->paragraphs(10))),
         'is_featured' => $faker->boolean,
-        'category_id' => $faker->numberBetween(1, 6),
+        'category_id' => $faker->numberBetween(1, 5),
+        'gallery_id' => $faker->numberBetween(1, 6),
         'author_id' => $faker->numberBetween(1, 10),
     ];
 
