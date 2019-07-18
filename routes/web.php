@@ -17,6 +17,7 @@ Auth::routes([
     'verify' => false,
 ]);
 
+Route::redirect('/home', '/admin');
 Route::redirect('/', '/admin')->name('home');
 
 Route::prefix('/admin')->namespace('Admin')->middleware('auth')->group(function () {
