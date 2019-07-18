@@ -36,6 +36,7 @@ class ResetPlaygroundJob implements ShouldQueue
         Artisan::call('key:generate --force');
         Artisan::call('migrate:fresh --force');
         Artisan::call('db:seed --force');
+        Artisan::call('storage:link');
         Artisan::call('up');
     }
 
