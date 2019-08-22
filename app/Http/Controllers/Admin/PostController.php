@@ -19,7 +19,10 @@ class PostController extends Controller
     {
         $this->panel = maelstrom(Post::class)
             ->setEagerLoad(['category', 'tags'])
-            ->setRelationships(['tag_ids' => 'tags'])
+            ->setRelationships([
+                'tag_ids' => 'tags',
+                'meta_' => 'meta'
+            ])
             ->setWithAttributes(['tag_names', 'category.admin_url']);
     }
 

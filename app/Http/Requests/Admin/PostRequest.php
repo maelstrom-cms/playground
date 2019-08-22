@@ -28,6 +28,8 @@ class PostRequest extends FormRequest
             'author_id' => 'required|numeric',
             'category_id' => 'required|numeric',
             'rating' => 'required|numeric',
+            'meta_description' => 'required',
+            'meta_keywords' => 'required',
             'body' => 'required',
             'slug' => $this->request->get('_method') === 'POST' ? '' : 'required',
             'tag_ids' => 'nullable|array',

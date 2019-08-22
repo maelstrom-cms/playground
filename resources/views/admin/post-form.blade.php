@@ -8,8 +8,9 @@
         'method' => $method,
         'novalidate' => true,
     ])
+
         @if (maelstrom()->getEntry())
-            <div class="flex">
+            <div class="flex flex-wrap">
                 <div class="w-1/2 pr-10">
                     @include('maelstrom::inputs.text', [
                         'name' => 'name',
@@ -24,13 +25,47 @@
                         'required' => true,
                     ])
                 </div>
+                <div class="w-1/2 pr-10">
+                    @include('maelstrom::inputs.text', [
+                        'name' => 'meta.description',
+                        'label' => 'Meta Description',
+                        'required' => true,
+                        'html_type' => 'textarea',
+                    ])
+                </div>
+                <div class="w-1/2">
+                    @include('maelstrom::inputs.text', [
+                        'name' => 'meta.keywords',
+                        'label' => 'Meta Keywords',
+                        'required' => true,
+                    ])
+                </div>
             </div>
         @else
-            @include('maelstrom::inputs.text', [
-                'name' => 'name',
-                'label' => 'Title',
-                'required' => true,
-            ])
+            <div class="flex flex-wrap">
+                <div class="w-full">
+                    @include('maelstrom::inputs.text', [
+                        'name' => 'name',
+                        'label' => 'Title',
+                        'required' => true,
+                    ])
+                </div>
+                <div class="w-1/2 pr-10">
+                    @include('maelstrom::inputs.text', [
+                        'name' => 'meta.description',
+                        'label' => 'Meta Description',
+                        'required' => true,
+                        'html_type' => 'textarea',
+                    ])
+                </div>
+                <div class="w-1/2">
+                    @include('maelstrom::inputs.text', [
+                        'name' => 'meta.keywords',
+                        'label' => 'Meta Keywords',
+                        'required' => true,
+                    ])
+                </div>
+            </div>
         @endif
 
         @include('maelstrom::inputs.rating', [

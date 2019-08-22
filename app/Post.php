@@ -22,6 +22,11 @@ class Post extends Model
         'featured_image',
     ];
 
+    public function meta()
+    {
+        return $this->hasOne(MetaData::class);
+    }
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
